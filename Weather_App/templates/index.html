@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather App</h1>
+        
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="searchBtn">Search</button>
+        </div>
+        
+        <div class="unit-toggle">
+            <button id="celsiusBtn" class="active">°C</button>
+            <button id="fahrenheitBtn">°F</button>
+        </div>
+        
+        <div id="weatherInfo" class="weather-info">
+            <h2 id="location"></h2>
+            <div class="temp"><span id="temperature"></span><span id="unit"></span></div>
+            <div class="description">
+                <img id="weatherIcon" src="" alt="Weather icon">
+                <span id="weatherDescription"></span>
+            </div>
+            <div class="details">
+                <div class="detail-item">
+                    <div>Feels Like</div>
+                    <div class="detail-value"><span id="feelsLike"></span><span id="feelsLikeUnit"></span></div>
+                </div>
+                <div class="detail-item">
+                    <div>Humidity</div>
+                    <div class="detail-value"><span id="humidity"></span>%</div>
+                </div>
+                <div class="detail-item">
+                    <div>Wind</div>
+                    <div class="detail-value"><span id="windSpeed"></span> km/h</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="error" class="error"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
