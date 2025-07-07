@@ -11,7 +11,6 @@ def generate_secure_password(length=12, use_uppercase=True, use_digits=True, use
     digits = string.digits if use_digits else ''
     special = '!@#$%^&*()_+-=[]{}|;:,.<>?' if use_special else ''
     
-    # Combine all allowed characters
     all_chars = lowercase + uppercase + digits + special
     
     # Ensure password contains at least one character from each selected set
@@ -37,7 +36,6 @@ def main():
     print("--------------------------")
     
     try:
-        # Get user preferences
         count = int(input("Number of passwords to generate (1-20): "))
         count = max(1, min(20, count))  # Clamp between 1 and 20
         
@@ -48,7 +46,7 @@ def main():
         digits = input("Include digits? (y/n): ").lower() == 'y'
         special = input("Include special characters? (y/n): ").lower() == 'y'
         
-        # Generate and display passwords
+
         print("\nGenerated Passwords:")
         for i in range(count):
             password = generate_secure_password(length, uppercase, digits, special)
